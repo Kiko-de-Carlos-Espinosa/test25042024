@@ -12,7 +12,7 @@ public class PriceService {
     @Autowired
     PriceRepo priceRepo;
     
-    public <Optional> Price getPrice(long brinadId, long productId) {
+    public Price getPrice(long brinadId, long productId) {
         return priceRepo.getPrice(brinadId, productId, System.currentTimeMillis());
     }
 

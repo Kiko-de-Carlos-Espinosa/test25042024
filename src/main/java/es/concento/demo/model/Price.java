@@ -16,32 +16,34 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Table(name = "PRICES") 
+@Table(name = "prices") 
 public class Price implements Serializable {
 
-    @GeneratedValue(strategy=GenerationType.AUTO)
     @Id
     private long id;
 
-    @Column(name="BRAND_ID", nullable=false)
+    @Column(name="brand_id", nullable=false)
     private long brandId;
 
-    @Column(name="START_DATE", nullable=false)
+    @Column(name="start_date", nullable=false)
     private long startDate;
 
-    @Column(name="END_DATE", nullable=false)
+    @Column(name="end_date", nullable=false)
     private long endDate;
 
-    @Column(name="PRODUCT_ID", nullable=false)
+    @Column(name="price_list", nullable=false)
+    private long priceLisrt;
+
+    @Column(name="product_id", nullable=false)
     private long productId;
 
-    @Column(name="PRIORITY", nullable=false)
+    @Column(name="priority", nullable=false)
     private long priority;
 
-    @Column(name="PRICE", nullable=false)
+    @Column(name="price", nullable=false)
     private double price;
 
-    @Column(name="CURR", nullable=false)
+    @Column(name="currency", nullable=false)
     private String curr;
 
 }
