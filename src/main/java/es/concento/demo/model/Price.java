@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -32,7 +30,7 @@ public class Price implements Serializable {
     private long endDate;
 
     @Column(name="price_list", nullable=false)
-    private long priceLisrt;
+    private long priceList;
 
     @Column(name="product_id", nullable=false)
     private long productId;

@@ -17,9 +17,10 @@ public class PricesController {
     @GetMapping("/price")
     public Price price (
         @RequestParam(value = "brand") long brandId,
-        @RequestParam(value = "product") long productId
+        @RequestParam(value = "product") long productId,
+        @RequestParam(value = "date") long date
         ) {
-        return priceService.getPrice(productId, brandId);
+        return priceService.getPrice(productId, brandId, date);
     }
 
 }
