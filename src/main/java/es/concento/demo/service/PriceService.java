@@ -12,7 +12,7 @@ public class PriceService {
     @Autowired
     PriceRepo priceRepo;
     
-    public Price getPrice(long brinadId, long productId, long date) {
-        return priceRepo.getPrice(brinadId, productId, date);
+    public Price getPrice(long brandId, long productId, long date) {
+        return priceRepo.getPrice(brandId, productId, date);
     }
 }

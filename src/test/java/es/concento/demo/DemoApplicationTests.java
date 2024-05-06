@@ -17,6 +17,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.jdbc.Sql;
 
 import es.concento.demo.service.PriceService;
 import es.concento.demo.model.Price;
@@ -32,10 +33,11 @@ class DemoApplicationTests {
 	@Mock
 	private PriceRepo priceRepo;
 
-	@Test
 	@ParameterizedTest
+	//@Sql(scripts = {"/data.sql"}, executionPhase = BEFORE_TEST_CLASS)
 	@MethodSource ("providedTestData")
 	public void tests(long brand, long product, String fecha, long resultado ) throws Exception {
+		System.out.println("brand:" + brand + "/" + "product:" + product + "/" + "fecha:" + fecha + "/" + "resultado:" + resultado);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     	dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
     	Date midate = dateFormat.parse(fecha);
@@ -45,12 +47,12 @@ class DemoApplicationTests {
 
 	static Stream<Arguments> providedTestData() {
 		return Stream.of(
-			//brand, product,date
-			Arguments.of(1L,35445L, "2020-06-14 10:00:00",1L),
-			Arguments.of(1L,35445L, "2020-06-14 16:00:00",1L),
-			Arguments.of(1L,35445L, "2020-06-14 21:00:00",1L),
-			Arguments.of(1L,35445L, "2020-06-15 10:00:00",1L),
-			Arguments.of(1L,35445L, "2020-06-16 21:00:00",1L)
+			//brand, product,date,resultado
+			Arguments.of(1,35455, "2020-06-14 10:00:00",1),
+			Arguments.of(1,35455, "2020-06-14 16:00:00",1),
+			Arguments.of(1,35455, "2020-06-14 21:00:00",1),
+			Arguments.of(1,35455, "2020-06-15 10:00:00",1),
+			Arguments.of(1,35455, "2020-06-16 21:00:00",1)
 		);
 	}
 }

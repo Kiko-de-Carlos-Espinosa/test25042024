@@ -20,7 +20,7 @@ public class PricesController {
         @RequestParam(value = "product") long productId,
         @RequestParam(value = "date") long date
         ) {
-        return priceService.getPrice(productId, brandId, date);
+        return priceService.getPrice(brandId, productId, date);
     }
 
 }
