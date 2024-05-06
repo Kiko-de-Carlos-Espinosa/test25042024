@@ -47,7 +47,7 @@ class DemoApplicationTests {
 
 	static Stream<Arguments> providedTestData() {
 		return Stream.of(
-			//brand, product,date,resultado
+			//brand, product,date,resultado (poner el resuñtado correcto)
 			Arguments.of(1,35455, "2020-06-14 10:00:00",1),
 			Arguments.of(1,35455, "2020-06-14 16:00:00",1),
 			Arguments.of(1,35455, "2020-06-14 21:00:00",1),
